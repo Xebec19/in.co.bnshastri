@@ -115,7 +115,7 @@
     <!-- Script preloading -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="script-src 'self' https://www.clarity.ms"
+      content="script-src 'self' 'unsafe-inline' https://www.clarity.ms https://www.googletagmanager.com/gtm.js https://www.googletagmanager.com/ns.html"
     />
     <link rel="preload" href="main.js" as="script" />
     <script defer src="main.js"></script>
@@ -287,5 +287,13 @@
         © 2025 पंडित बी.एन. शास्त्री - All Rights Reserved
       </p>
     </footer>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-W3R3Z7DZ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
   </body>
 </html>
