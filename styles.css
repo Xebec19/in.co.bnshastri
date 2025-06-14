@@ -7,20 +7,26 @@
 
 body {
   background-color: #ff8f6b;
-  /* background-image: linear-gradient(to right, red , yellow); */
-  /* background: linear-gradient(to bottom, #FFFAF0, #87CEEB); */
   color: #f0f0f0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
   padding: 20px;
+  line-height: 1.6;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .container {
-  max-width: 800px;
   width: 100%;
   text-align: center;
+  margin: 0 auto;
 }
 
 .profile {
@@ -32,6 +38,13 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid #380d00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
 }
 
 .name {
@@ -43,42 +56,64 @@ body {
 .title {
   font-size: 1.2em;
   color: #380d00;
+  margin-bottom: 1em;
 }
 
-.navigation {
-  margin-bottom: 20px;
+.services,
+.contact {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
 }
 
-.nav-link {
-  margin: 0 10px;
-  color: #f0f0f0;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
+h3 {
+  color: #380d00;
+  margin-bottom: 0.5em;
 }
 
 .content {
   font-size: 1.1em;
   line-height: 1.6;
   color: #0f1924;
+  margin-bottom: 20px;
 }
 
 .link {
+  display: inline-block;
   color: #380d00;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
 .link:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9em;
+  color: #380d00;
 }
 
 @media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
   .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 
   .name {
@@ -89,17 +124,23 @@ body {
     font-size: 1em;
   }
 
-  .navigation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-link {
-    margin: 5px;
-  }
-
   .content {
     font-size: 1em;
+  }
+
+  .services,
+  .contact {
+    padding: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-img:hover,
+  .link:hover {
+    transform: none;
+  }
+
+  * {
+    transition: none !important;
   }
 }
